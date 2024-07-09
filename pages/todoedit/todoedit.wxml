@@ -1,0 +1,6 @@
+<view class="container">
+  <input bindinput="handleTitleInput" value="{{title}}" />
+  <textarea bindinput="handleDescriptionInput" value="{{description}}"></textarea>
+  <button bindtap="saveTodo">{{isEdit ? '保存' : '添加'}}</button>
+  <button class="cancel-btn" bindtap="cancelEdit">取消</button>
+</view>

@@ -1,0 +1,17 @@
+<view class="container">
+  <button bindtap="openAddTodo">添加任务</button>
+
+  <view class="todo-list">
+    <block wx:for="{{todos}}" wx:key="index">
+      <view class="todo-item">
+        <checkbox checked="{{item.completed}}" bindtap="toggleTodo" data-index="{{index}}"/>
+        <view bindtap="openEditTodo" data-index="{{index}}">
+          <text class="{{item.completed ? 'completed' : ''}}">{{item.title}}</text>
+        </view>
+        <button class="delete-btn" size="mini" bindtap="deleteTodo" data-index="{{index}}">删除</button>
+      </view>
+    </block>
+  </view>
+
+  <button class="clear-btn" bindtap="clearTodos">清空任务</button>
+</view>
